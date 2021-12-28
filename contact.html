@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link src="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class=" h1 text-center mt-5 text-danger font-weight-bold">
+            <p>Contact Us</p>
+        </div>
+        <div class="col-md-12 mt-5">
+        <form id="submit-form" action="">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label>Name</label>
+                <input type="text" name="name" class="form-control" id="inputEmail4" placeholder="Name">
+              </div>
+              <div class="form-group col-md-6">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control" id="inputPassword4" placeholder="Email">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="number" name="mob" class="form-control" id="mob" placeholder="Mobile Number">
+            </div>
+            <div class="form-group">
+                <label>Address</label>
+                <input type="text" name="address" class="form-control" id="inputAddress" placeholder="1234 Main St">
+              </div>
+            <div class="form-group">
+              <label>Address 2</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label>District</label>
+                <input type="text" name="district" class="form-control" id="inputCity">
+              </div>
+              <div class="form-group col-md-4">
+                <label>State</label>
+                <select id="inputState" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>Kerala</option>
+                  <option>Tamil nadu</option>
+                  <option>Karnataka</option>
+                  <option>Delhi</option>
+                  <option>Punjab</option>
+                  <option>Goa</option>
+                </select>
+              </div>
+              <div class="form-group col-md-2">
+                <label>Zip</label>
+                <input type="number" name="zip" class="form-control" id="inputZip">
+              </div>
+            </div>
+            <div class="form-group">
+                <label>Message</label>
+                <textarea name="message" rows="8" class="form-control" id="Message" placeholder="Type your Concerns...."></textarea>
+              </div>
+            
+            <div class="text-center mt-5">
+                <button type="submit" class="btn btn-danger">Submit</button>
+            </div>
+           
+          </form>
+        </div>
+    </div>
+
+    <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycby_yn9yCCVJ3sA_ianTRhYRsLmwLPfpbq4k1JB1VJQ7Ns7A_uzNEntRWUfy_dLvs10b/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
